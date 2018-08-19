@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.min.css">
   <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
   <link rel="stylesheet" href="./css/commend.css">
-  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/user.css">
   <title>Document</title>
 </head>
 
@@ -21,7 +21,7 @@
     </div>
     <div class="head">
       <img src="./images/123.png" alt="">
-      <p>超级管理员</p>
+      <p>林允儿</p>
     </div>
     <div class="foot">
       <ul>
@@ -53,41 +53,97 @@
   <!-- 右侧 -->
   <div class="letao-right">
     <div class="lt-top">
-      <a href="#" class="pull-left lt-cai"><i class="glyphicon glyphicon-align-justify"></i></a>
-      <a href="#" class="pull-right lt-dan"><i class="glyphicon glyphicon-log-out"></i></a>
+      <a href="#" class="pull-left lt-cai">
+        <i class="glyphicon glyphicon-align-justify"></i>
+      </a>
+      <a href="#" class="pull-right lt-dan">
+        <i class="glyphicon glyphicon-log-out"></i>
+      </a>
     </div>
     <div class="container-fluid lt-center">
-        <ol class="breadcrumb">
-            <li><a href="index.html">管理系统</a></li>
-            <li class="active">用户管理</li>
-          </ol>
+      <ol class="breadcrumb">
+        <li>
+          <a href="index.html">管理系统</a>
+        </li>
+        <li class="active">用户管理</li>
+      </ol>
     </div>
-    
+    <div class="container-fluid">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>序号</th>
+            <th>用户名</th>
+            <th>手机号</th>
+            <th>状态</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr>
+            <td>1</td>
+            <td>itcast</td>
+            <td>15102324243</td>
+            <td>正常</td>
+            <td><button class="btn btn-danger">禁用</button></td>
+          </tr> -->
+        </tbody>
+      </table>
+      <div class="text-right">
+        <ul id="paginator"></ul>
+      </div>
+    </div>
+
   </div>
   <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" id="meng">
-      <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">温馨提示</h4>
-          </div>
-          <div class="modal-body">
-            <p class="p"><i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-            <button type="button" class="btn btn-primary del">退出</button>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">温馨提示</h4>
+        </div>
+        <div class="modal-body">
+          <p class="p">
+            <i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary del">退出</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
 
 </body>
+<script type="text/html" id="tpl">
+  {{each rows v i}}
+  <tr>
+    <td>{{i+1+(page-1)*5}}</td>
+    <td>{{v.username}}</td>
+    <td>{{v.mobile}}</td>
+    <td>{{v.isDelete===1?"正常":"禁用"}}</td>
+    <td>
+      {{if v.isDelete===1}}
+      <button class="btn btn-danger">禁用</button>
+      {{else}}
+      <button class="btn btn-success">启用</button>
+      {{/if}}
+    </td>
+  </tr>
+  {{/each}}
+</script>
 <script src="./lib/jquery/jquery.min.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./lib/nprogress/nprogress.js"></script>
 <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="./js/comment.js"></script>
-<script src="./js/index.js"></script>
+<script src="./js/user.js"></script>
 
 </html>
