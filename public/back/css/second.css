@@ -1,0 +1,5 @@
+.lt-center .table tr th,
+.lt-center .table tr td {
+  text-align: center;
+  vertical-align: middle;
+}
