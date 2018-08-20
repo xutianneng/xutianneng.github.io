@@ -1,0 +1,87 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+.lt-king {
+  padding: 45px 0 50px 0;
+  width: 100%;
+  max-width: 640px;
+  min-width: 320px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  background-color: #fff;
+}
+.lt-king .lt-top {
+  height: 45px;
+  width: 100%;
+  background-color: #006699;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.lt-king .lt-top .left,
+.lt-king .lt-top .right {
+  display: block;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  left: auto;
+  color: #fff;
+  font-size: 14px;
+  line-height: 45px;
+  text-align: center;
+}
+.lt-king .lt-top .right {
+  right: 0;
+}
+.lt-king .lt-top h4 {
+  width: 100%;
+  padding: 0 45px;
+  line-height: 45px;
+  text-align: center;
+  color: #fff;
+  margin: 0;
+}
+.lt-king .lt-main {
+  width: 100%;
+  height: 100%;
+}
+.lt-king .lt-bottom {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #006699;
+}
+.lt-king .lt-bottom ul li {
+  float: left;
+  width: 25%;
+  list-style: none;
+}
+.lt-king .lt-bottom ul li a {
+  padding-top: 8px;
+  display: block;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  color: #fff;
+}
+.lt-king .lt-bottom ul li a p {
+  color: #fff;
+}
+.lt-king .lt-bottom ul li a.current i {
+  color: orange;
+}
+.lt-king .lt-bottom ul li a.current p {
+  color: orange;
+}
