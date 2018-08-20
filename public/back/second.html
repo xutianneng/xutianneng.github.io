@@ -122,20 +122,24 @@
           <h4 class="modal-title">添加分类</h4>
         </div>
         <div class="modal-body">
-          <form>
+          <form id="form">
             <div class="form-group">
               <div class="btn-group">
                 <button class="btn btn-default btn-md dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span id="dropdownText">请选择一级分类</span>
+                  <span id="dropdownText">请选择一级分类</span>
                   <span class="caret"></span>
                 </button>
-                <ul class="dropdown-menu">
                 
+                <ul class="dropdown-menu">
+                  
                 </ul>
               </div>
+              <input type="hidden" name="categoryId">
             </div>
+
             <div class="form-group">
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="请输入二级分类">
+              <input type="hidden" name="hot" id="" value="1">
+              <input type="text" class="form-control" name="brandName" id="exampleInputPassword1" placeholder="请输入二级分类">
             </div>
             <div class="form-group">
               <label class="btn btn-default" for="fileupload">上传图片</label>
@@ -143,13 +147,15 @@
             </div>
             <div class="form-group" id="imgBox">
               <img src="./images/none.png" width="100" alt="">
+              <input type="hidden" name="brandLogo">
             </div>
-          </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
           <button type="submit" class="btn btn-primary insert">添加</button>
         </div>
+      </form>
+
       </div>
       <!-- /.modal-content -->
     </div>
@@ -170,7 +176,7 @@
 </script>
 <script type="text/html" id="addtpl">
   {{each rows v i}}
-  <li><a href="#">{{v.categoryName}}</a></li>
+  <li><a href="#" data-id="{{v.id}}">{{v.categoryName}}</a></li>
   {{/each}}
 </script>
 <script src="./lib/jquery/jquery.min.js"></script>
