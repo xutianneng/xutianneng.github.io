@@ -120,9 +120,7 @@ $(function () {
           $("#men").modal("hide");
           $("#imgBox img").attr("src", "./images/none.png")
           $("#dropdownText").text("请选择一级分类");
-
-
-
+          $("#form").data("bootstrapValidator").resetForm(true)
         }
       }
     })
